@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.younes.sellme"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="19" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.younes.sellme.ActivityLogin"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.younes.sellme.ActivityCategories"
+            android:label="@string/title_activity_categories" >
+        </activity>
+        <activity
+            android:name="com.younes.sellme.ActivityProducts"
+            android:label="@string/title_activity_products"
+            android:parentActivityName="com.younes.sellme.ActivityCategories" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.younes.sellme.Categories" />
+        </activity>
+        <activity
+            android:name="com.younes.sellme.ActivityProductDetails"
+            android:label="@string/title_activity_product_details" >
+        </activity>
+        <activity
+            android:name="com.younes.sellme.ActivityOrder"
+            android:label="@string/title_activity_activity_order" >
+        </activity>
+    </application>
+
+</manifest>
