@@ -10,9 +10,9 @@
     tools:ignore="MergeRootFrame" >
 
     <LinearLayout
-        android:id="@+id/llLogin"
+        android:id="@+id/llSignIn"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical" >
 
         <LinearLayout
@@ -26,8 +26,8 @@
                 android:text="Username" />
 
             <EditText
-                android:id="@+id/etLoginUsername" 
-                android:layout_width="wrap_content"
+                android:id="@+id/etLoginUsername"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
@@ -43,26 +43,26 @@
 
             <EditText
                 android:id="@+id/etLoginPassword"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword" />
         </LinearLayout>
 
         <Button
             android:id="@+id/btnLogin"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="10dp"
             android:text="Login" />
-        
-        </LinearLayout>
-        
+    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/llSignUp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone" >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -76,7 +76,7 @@
 
             <EditText
                 android:id="@+id/etSignUpUsername"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
@@ -91,20 +91,28 @@
                 android:text="Password" />
 
             <EditText
-                android:id="@+id/etPassword"
+                android:id="@+id/etSignUpPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword" />
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="10dp"
-            android:text="Login" />
-        
-        </LinearLayout>
-    
+            android:text="Sign Up" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/etHaveAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Dont have an account? Create one " >
+    </TextView>
+
+</LinearLayout>
