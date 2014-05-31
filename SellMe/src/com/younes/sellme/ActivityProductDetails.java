@@ -1,22 +1,73 @@
 package com.younes.sellme;
 
 import android.app.Activity;
-import android.app.ActionBar;
-import android.app.Fragment;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.parse.GetDataCallback;
+import com.parse.ParseException;
+import com.parse.ParseFile;
+import com.parse.ParseObject;
+import com.parse.ParseUser;
 
 public class ActivityProductDetails extends Activity {
+	
+	ImageView ivImage;
+	TextView tvDesc;
+	TextView tvProductCondition;
+	TextView tvProductPrice;
+	LinearLayout llAddToCart;
+	
+	ParseObject Product;
+	
+	Bitmap bmp;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_product_details);
+		
+		
+		ivImage = (ImageView) findViewById(R.id.ivImage);
+		tvDesc = (TextView) findViewById(R.id.tvDesc);
+		tvProductCondition = (TextView) findViewById(R.id.tvProductCondition);
+		tvProductPrice = (TextView) findViewById(R.id.tvProductPrice);
+		llAddToCart = (LinearLayout) findViewById(R.id.llAddToCart);
+		
+		Product= MyApplication.Product;
+		
+		
+		tvProductCondition.setText(Product.getString("Condition"));
+		tvProductPrice.setText(Product.getString("Price"));
+		tvDesc.setText(Product.getInt("Description"));
+		
+		ParseFile applicantResume = (ParseFile)Product.get("Image");
+		applicantResume.getDataInBackground(new GetDataCallback() {
+		  public void done(byte[] data, ParseException e) {
+		    if (e == null) {
+		      
+		    	
+				bmp = BitmapFactory.decodeByteArray(data, 0, data.length);
+				Bitmap ss = bmp;
+				
+				
+				
+		    } else {
+		      // something went wrong
+		    }
+		  }
+		});
+		
+		
+ 		ivImage.setImageBitmap(bmp);
+		
 
 	}
 
@@ -40,5 +91,16 @@ public class ActivityProductDetails extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
+	
+	public void btnBuy(View v)
+    {
+        ParseObject object = new ParseObject("Cart");
+        object.put("prod_id", MyApplication.Product.getObjectId());
+        object.increment("quantity");
+        object.put("userID", ParseUser.getCurrentUser().getObjectId());
+        object.saveInBackground();
+        
+        
+    } 
 	
 }

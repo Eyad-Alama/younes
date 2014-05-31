@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.parse.Parse;
+import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQueryAdapter;
 
@@ -22,12 +23,19 @@ public class ActivityCategories extends ListActivity  {
        
         
         //Create the database
-        ParseQueryAdapter<ParseObject> adapter = new ParseQueryAdapter<ParseObject>(this, "Categories");
-        adapter.setTextKey("Name");
-        adapter.setImageKey("Image");
-        
-        // Assign adapter to List
-        setListAdapter(adapter); 
+        ListAdapterCategories adapter;
+		try {
+			adapter = new ListAdapterCategories(this, "Categories");
+	        adapter.setTextKey("Name");
+	        adapter.setImageKey("Image");
+	        
+	        
+	        // Assign adapter to List
+	        setListAdapter(adapter); 
+
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
    }
 
     
@@ -39,7 +47,8 @@ public class ActivityCategories extends ListActivity  {
         ParseObject object = (ParseObject) l.getItemAtPosition(position);
         
 		Intent intent = new Intent(this, ActivityProducts.class);
-		intent.putExtra("Category",object.getObjectId());
+		
+		intent.putExtra("cat_id",object.getObjectId().toString());
 		startActivity(intent);
            
               

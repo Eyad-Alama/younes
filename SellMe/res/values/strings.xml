@@ -8,5 +8,6 @@
     <string name="title_activity_products">Products</string>
     <string name="title_activity_product_details">ProductDetails</string>
     <string name="title_activity_activity_order">ActivityOrder</string>
+    <string name="title_activity_activity_cart">ActivityCart</string>
 
 </resources>

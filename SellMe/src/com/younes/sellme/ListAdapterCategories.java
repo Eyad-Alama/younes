@@ -3,6 +3,7 @@ package com.younes.sellme;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -28,6 +29,10 @@ public class ListAdapterCategories extends ParseQueryAdapter {
 			    v = View.inflate(getContext(), R.layout.row_category, null);
 			    
 			  }
+		 
+		 super.getItemView(object, v, parent);
+		 
+		 
 		 return v;
 			 
 	}

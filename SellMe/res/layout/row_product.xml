@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="5dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="5dp" >
+
+    <LinearLayout
+        android:id="@+id/LLcontainer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/listview_rounded_corners"
+        android:orientation="horizontal"
+        android:paddingBottom="7dp"
+        android:paddingLeft="7dp"
+        android:paddingRight="0dp"
+        android:paddingTop="7dp" >
+
+        <com.parse.ParseImageView
+            android:id="@android:id/icon"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="12dp"
+            android:background="#aaaaaa"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:gravity="bottom"
+            android:orientation="vertical" >
+
+            
+            
+              <!-- The Shared image -->
+
+            <TextView
+                android:id="@android:id/text1"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                
+                
+                 />
+            
+			<TextView
+                android:id="@+id/txtCondition"
+                
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:lineSpacingExtra="2dp"
+                android:lines="2" />
+                        
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="5dp"
+                android:alpha="0.4"
+                android:scaleType="centerCrop"
+                android:src="@drawable/seperator_line" />
+
+            <LinearLayout
+                android:id="@+id/llShare"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="bottom"
+                android:orientation="horizontal" >
+
+                <TextView
+                    
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:text="Price : "
+                    android:textColor="#666"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/txtAmount"
+                    
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="3dp"
+                    android:gravity="right"
+                    android:textColor="#3FA71B"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

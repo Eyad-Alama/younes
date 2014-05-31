@@ -1,10 +1,13 @@
 package com.younes.sellme;
 
-import com.parse.Parse;
-
 import android.app.Application;
 
+import com.parse.Parse;
+import com.parse.ParseObject;
+
 public class MyApplication extends Application {
+	
+	public static ParseObject Product;
 
 	@Override
 	public void onCreate() {

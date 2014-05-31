@@ -32,6 +32,7 @@ public class ActivityLogin extends Activity {
 	TextView etLoginPassword;
 	TextView etSignUpUsername;
 	TextView etSignUpPassword;
+	TextView txtHaveAccount2;
 	Button btnLogin;
 	Button btnSignUp;
 	
@@ -49,11 +50,12 @@ public class ActivityLogin extends Activity {
         
         llSignUp = (LinearLayout) findViewById(R.id.llSignUp);
         llSignIn = (LinearLayout) findViewById(R.id.llSignIn);
-        tvHaveAccount = (TextView) findViewById(R.id.etHaveAccount);
+        tvHaveAccount = (TextView) findViewById(R.id.txtHasAccount);
         etLoginUsername = (TextView) findViewById(R.id.etLoginUsername);
         etLoginPassword = (TextView) findViewById(R.id.etLoginPassword);
         etSignUpUsername = (TextView) findViewById(R.id.etSignUpUsername);
         etSignUpPassword = (TextView) findViewById(R.id.etSignUpPassword);
+        txtHaveAccount2 = (TextView) findViewById(R.id.txtHaveAccount2);
         btnLogin = (Button) findViewById(R.id.btnLogin);
         btnSignUp = (Button) findViewById(R.id.btnSignUp);
         
@@ -67,15 +69,19 @@ public class ActivityLogin extends Activity {
 				{
 					llSignIn.setVisibility(View.VISIBLE);
 					llSignUp.setVisibility(View.GONE);
-					tvHaveAccount.setText("Already have an account? Login here");
-				}
-				else
-				{
-					llSignIn.setVisibility(View.GONE);
-					llSignUp.setVisibility(View.VISIBLE);
-					tvHaveAccount.setText("Dont have an account? Create one");
 					
 				}
+			
+				
+			}
+		});
+        
+        txtHaveAccount2.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				llSignIn.setVisibility(View.GONE);
+				llSignUp.setVisibility(View.VISIBLE);
 				
 			}
 		});
