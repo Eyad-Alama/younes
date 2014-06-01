@@ -20,8 +20,8 @@ public class ActivityCart extends ListActivity {
 		
 		final String userID = ParseUser.getCurrentUser().getObjectId();
 		
-		 ParseQueryAdapter<ParseObject> adapter =
-       		  new ParseQueryAdapter<ParseObject>(this, new ParseQueryAdapter.QueryFactory<ParseObject>() {
+		 ListAdapterCarts adapter =
+       		  new ListAdapterCarts(this, new ParseQueryAdapter.QueryFactory<ParseObject>() {
        		    public ParseQuery<ParseObject> create() {
        		      // Here we can configure a ParseQuery to our heart's desire.
        		      ParseQuery<ParseObject> query = new ParseQuery("Cart");
@@ -29,7 +29,6 @@ public class ActivityCart extends ListActivity {
        		      return query;
        		    }
        		  });
-		 
 		 
        
        adapter.setTextKey("Name");
