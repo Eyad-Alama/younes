@@ -33,7 +33,7 @@ public class ListAdapterCarts extends ParseQueryAdapter {
 	@Override
 	public View getItemView(ParseObject object, View v, ViewGroup parent) {
 		 if (v == null) {
-			    v = View.inflate(getContext(), R.layout.row_product, null);
+			    v = View.inflate(getContext(), R.layout.row_cart, null);
 			    
 			  }
 		 

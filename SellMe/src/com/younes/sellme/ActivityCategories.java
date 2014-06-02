@@ -29,7 +29,7 @@ public class ActivityCategories extends ListActivity  {
 	        adapter.setTextKey("Name");
 	        adapter.setImageKey("Image");
 	        
-	        
+	        adapter.setPlaceholder(getResources().getDrawable(R.drawable.ic_launcher));
 	        // Assign adapter to List
 	        setListAdapter(adapter); 
 
