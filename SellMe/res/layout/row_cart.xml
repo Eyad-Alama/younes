@@ -12,20 +12,14 @@
         android:layout_height="wrap_content"
         android:text="This is the product name"
         android:layout_weight="0.6" />
-    
-    <TextView
-        android:id="@+id/tvProductQuantity"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="X 1"
-        android:layout_weight="0.2" />
+   
     
     <TextView
         android:id="@+id/tvProductPrice"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="RM 120"
-        android:layout_weight="0.2" />
+        android:layout_weight="0.3" />
     
     
     

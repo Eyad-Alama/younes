@@ -3,7 +3,10 @@ package com.younes.sellme;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.namespace.QName;
+
 import android.app.ListActivity;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -18,32 +21,45 @@ import com.parse.ParseUser;
 
 public class ActivityCart extends ListActivity {
 	ArrayList<String> prod_ids = new ArrayList<String>();
-
+	private Context mContext;
+	ListAdapterCarts adapter;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_cart);
-		
+		mContext = this;
 		
 		final String userID = ParseUser.getCurrentUser().getObjectId();
 		
 		ParseQuery<ParseObject> query = ParseQuery.getQuery("Cart");
-		query.whereEqualTo("userID", ParseUser.getCurrentUser().getObjectId());
+		query.whereEqualTo("userID", userID);
 		query.findInBackground(new FindCallback<ParseObject>() {
 		    public void done(List<ParseObject> cartItems, ParseException e) {
 		        if (e == null) {
 		        	//Another query to get the products
 		        	
 		        	for (ParseObject parseObject : cartItems) {
-						prod_ids.add(parseObject.getString("prod_id"));
+		        		int quantity = parseObject.getInt("quantity");
+		        		
+		        		for(int i=0; i<quantity; i++){
+		        			prod_ids.add(parseObject.getString("prod_id"));    
+		               }
+		        		
+		        		
 					}
 		        	ParseQuery<ParseObject> query = ParseQuery.getQuery("Products");
 		    		query.whereContainedIn("cart_id", prod_ids);
 		    		query.findInBackground(new FindCallback<ParseObject>() {
-		    		    public void done(List<ParseObject> products_list, ParseException e) {
+		    		    
+
+						public void done(List<ParseObject> products_list, ParseException e) {
 		    		        if (e == null) {
 		    		        	//Here is a list of products that we want the names from
 		    		        	
+		    		        	adapter =
+		    		             		  new ListAdapterCarts(mContext, products_list);
+		    		             				  
 		    		            
 		    		        } else {
 		    		            Log.d("score", "Error: " + e.getMessage());
@@ -58,20 +74,10 @@ public class ActivityCart extends ListActivity {
 		});
 		
 		
-		 ListAdapterCarts adapter =
-       		  new ListAdapterCarts(this, new ParseQueryAdapter.QueryFactory<ParseObject>() {
-       		    public ParseQuery<ParseObject> create() {
-       		      // Here we can configure a ParseQuery to our heart's desire.
-       		      ParseQuery<ParseObject> query = new ParseQuery("Cart");
-       		      query.whereEqualTo("userID", userID);
-       		      return query;
-       		    }
-       		  });
+		  
 		 
        
-       adapter.setTextKey("Name");
-       adapter.setImageKey("Image");
-       
+      
        
        // Assign adapter to List
        setListAdapter(adapter);

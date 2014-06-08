@@ -110,6 +110,7 @@ public class ActivityProductDetails extends Activity {
 		      
 		    	
 				bmp = BitmapFactory.decodeByteArray(data, 0, data.length);
+				ivImage.setImageBitmap(bmp);
 				Bitmap ss = bmp;
 				
 				
@@ -121,7 +122,7 @@ public class ActivityProductDetails extends Activity {
 		});
 		
 		
- 		ivImage.setImageBitmap(bmp);
+ 		
  		
  		
 		

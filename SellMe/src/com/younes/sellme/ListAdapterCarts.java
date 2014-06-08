@@ -1,48 +1,34 @@
 package com.younes.sellme;
 
+import java.util.List;
+
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 
-import com.parse.ParseException;
 import com.parse.ParseObject;
-import com.parse.ParseQueryAdapter;
-import com.parse.ParseQueryAdapter.QueryFactory;
 
-public class ListAdapterCarts extends ParseQueryAdapter {
-	
-	Context mContext;
-	
-	public ListAdapterCarts(Context context, String className) throws ParseException {
-		super(context, className);
-		mContext = context;
-		
+public class ListAdapterCarts extends ArrayAdapter<String> {
+	  private final Context mContext;
+	  private final List<ParseObject> values;
+
+	  public ListAdapterCarts(Context context, List<ParseObject> values) {
+	    super(context, R.layout.row_cart);
+	    this.mContext = context;
+	    this.values = values;
+	  }
+
+	  @Override
+	  public View getView(int position, View convertView, ViewGroup parent) {
+	    LayoutInflater inflater = (LayoutInflater) mContext
+	        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+	    View rowView = inflater.inflate(R.layout.row_cart, parent, false);
+	    
+	    
+	    
+	    
+	    return rowView;
+	  }
 	}
-	
-	
-	public ListAdapterCarts(ActivityCart context,
-			QueryFactory<ParseObject> queryFactory) {
-		
-		super(context,queryFactory);
-		mContext = context;
-	}
-
-
-
-
-	@Override
-	public View getItemView(ParseObject object, View v, ViewGroup parent) {
-		 if (v == null) {
-			    v = View.inflate(getContext(), R.layout.row_cart, null);
-			    
-			  }
-		 
-		 super.getItemView(object, v, parent);
-		 
-		
-		 return v;
-			 
-	}
-
-
-}
