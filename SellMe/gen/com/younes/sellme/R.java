@@ -32,30 +32,34 @@ public final class R {
         public static final int text_trans_bg=0x7f020007;
     }
     public static final class id {
-        public static final int LLcontainer=0x7f080013;
-        public static final int action_settings=0x7f080017;
-        public static final int btnLogin=0x7f08000b;
-        public static final int btnSignUp=0x7f080006;
+        public static final int LLcontainer=0x7f080016;
+        public static final int action_cart=0x7f08001b;
+        public static final int action_settings=0x7f08001a;
+        public static final int btnClear=0x7f080004;
+        public static final int btnLogin=0x7f08000e;
+        public static final int btnSignUp=0x7f080009;
         public static final int container=0x7f080000;
-        public static final int etLoginPassword=0x7f08000a;
-        public static final int etLoginUsername=0x7f080009;
-        public static final int etSignUpEmail=0x7f080005;
-        public static final int etSignUpPassword=0x7f080004;
-        public static final int etSignUpUsername=0x7f080003;
-        public static final int ivImage=0x7f08000d;
-        public static final int list1=0x7f080001;
-        public static final int llAddToCart=0x7f080011;
-        public static final int llShare=0x7f080015;
-        public static final int llSignIn=0x7f080008;
-        public static final int llSignUp=0x7f080002;
-        public static final int tvDesc=0x7f08000e;
-        public static final int tvProductCondition=0x7f08000f;
-        public static final int tvProductName=0x7f080012;
-        public static final int tvProductPrice=0x7f080010;
-        public static final int txtAmount=0x7f080016;
-        public static final int txtCondition=0x7f080014;
-        public static final int txtHasAccount=0x7f080007;
-        public static final int txtHaveAccount2=0x7f08000c;
+        public static final int etLoginPassword=0x7f08000d;
+        public static final int etLoginUsername=0x7f08000c;
+        public static final int etSignUpEmail=0x7f080008;
+        public static final int etSignUpPassword=0x7f080007;
+        public static final int etSignUpUsername=0x7f080006;
+        public static final int ivImage=0x7f080010;
+        public static final int llAddToCart=0x7f080014;
+        public static final int llShare=0x7f080018;
+        public static final int llSignIn=0x7f08000b;
+        public static final int llSignUp=0x7f080005;
+        public static final int tvDesc=0x7f080011;
+        public static final int tvProductCondition=0x7f080012;
+        public static final int tvProductName=0x7f080015;
+        public static final int tvProductPrice=0x7f080013;
+        public static final int txtAmount=0x7f080019;
+        public static final int txtCondition=0x7f080017;
+        public static final int txtEmpty=0x7f080001;
+        public static final int txtHasAccount=0x7f08000a;
+        public static final int txtHaveAccount2=0x7f08000f;
+        public static final int txtLabel=0x7f080002;
+        public static final int txtTotal=0x7f080003;
     }
     public static final class layout {
         public static final int activity_activity_order=0x7f030000;

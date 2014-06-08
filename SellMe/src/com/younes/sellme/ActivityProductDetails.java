@@ -4,6 +4,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -145,6 +146,12 @@ public class ActivityProductDetails extends Activity {
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
 			return true;
+		}
+		
+		if(id == R.id.action_cart)
+		{
+			Intent cartInt = new Intent(mContext, ActivityCart.class);
+			mContext.startActivity(cartInt);
 		}
 		return super.onOptionsItemSelected(item);
 	}

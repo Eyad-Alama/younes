@@ -9,6 +9,7 @@
     <TextView
         android:id="@+id/tvProductName"
         android:layout_width="0dp"
+        android:textColor="#FFFFFF"
         android:layout_height="wrap_content"
         android:text="This is the product name"
         android:layout_weight="0.6" />
@@ -17,7 +18,10 @@
     <TextView
         android:id="@+id/tvProductPrice"
         android:layout_width="0dp"
+        android:textColor="#46C250"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:text="RM 120"
         android:layout_weight="0.3" />
     
